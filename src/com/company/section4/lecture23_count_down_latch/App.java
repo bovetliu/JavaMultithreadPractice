@@ -1,6 +1,13 @@
 package com.company.section4.lecture23_count_down_latch;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+
+import java.time.Duration;
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
+import java.util.TreeMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -20,6 +27,7 @@ public class App {
 
         try {
             latch.await();
+            System.out.println(latch.getCount());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
